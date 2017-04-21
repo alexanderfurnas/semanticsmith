@@ -91,24 +91,24 @@ def water(seq1, seq2):
                 max_j = j
                 max_score = score[i][j];
     
-    align1, align2 = '', ''    # initial sequences
+    align1, align2 = [], []    # initial sequences
     
     i,j = max_i,max_j    # indices of path starting point
     
     #traceback, follow pointers
     while pointer[i][j] != 0:
         if pointer[i][j] == 3:
-            align1 += seq1[i-1]
-            align2 += seq2[j-1]
+            align1.append(seq1[i-1])
+            align2.append(seq2[j-1])
             i -= 1
             j -= 1
         elif pointer[i][j] == 2:
-            align1 += '-'
-            align2 += seq2[j-1]
+            align1.append('-')
+            align2.append(seq2[j-1])
             j -= 1
         elif pointer[i][j] == 1:
-            align1 += seq1[i-1]
-            align2 += '-'
+            align1.append(seq1[i-1])
+            align2.append('-')
             i -= 1
 
     finalize(align1, align2)

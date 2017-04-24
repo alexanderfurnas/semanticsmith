@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: sample-sigconf.aux
+The style file: ../ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: ../sigproc.bib
+I was expecting a `,' or a `}'---line 44 of file ../sigproc.bib
+ :   
+ :   booktitle={A paper prepared for presentation at the Midwest Political Science Association Annual Meeting, Chicago},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
+while executing---line 3325 of file ../ACM-Reference-Format.bst
+Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
+while executing---line 3325 of file ../ACM-Reference-Format.bst
+Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
+while executing---line 3325 of file ../ACM-Reference-Format.bst
+Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
+while executing---line 3371 of file ../ACM-Reference-Format.bst
+Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
+while executing---line 3371 of file ../ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
+while executing---line 3469 of file ../ACM-Reference-Format.bst
+Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
+while executing---line 3469 of file ../ACM-Reference-Format.bst
+Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
+while executing---line 3469 of file ../ACM-Reference-Format.bst
+Warning--empty year in Furnas2017ideal
+Warning--empty booktitle in Furnas2017ideal
+Warning--empty publisher in Furnas2017ideal
+Warning--empty address in Furnas2017ideal
+Warning--page numbers missing in both pages and numpages fields in Furnas2017ideal
+Warning--no number and no volume in grimmer2013text
+Warning--no number and no volume in lowe2013validating
+Warning--empty publisher in potthast2010evaluation
+Warning--empty address in potthast2010evaluation
+Warning--empty publisher in smith2013infectious
+Warning--empty address in smith2013infectious
+Warning--empty publisher in smith2014detecting
+Warning--empty address in smith2014detecting
+You've used 10 entries,
+            5706 wiz_defined-function locations,
+            1366 strings with 17287 characters,
+and the built_in function-call counts, 11767 in all, are:
+= -- 1543
+> -- 462
+< -- 0
++ -- 148
+- -- 168
+* -- 795
+:= -- 1225
+add.period$ -- 51
+call.type$ -- 10
+change.case$ -- 71
+chr.to.int$ -- 10
+cite$ -- 23
+duplicate$ -- 915
+empty$ -- 669
+format.name$ -- 204
+if$ -- 2900
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 40
+newline$ -- 117
+num.names$ -- 80
+pop$ -- 429
+preamble$ -- 1
+purify$ -- 121
+quote$ -- 0
+skip$ -- 347
+stack$ -- 0
+substring$ -- 808
+swap$ -- 92
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 230
+warning$ -- 13
+while$ -- 88
+width$ -- 0
+write$ -- 206
+(There were 9 error messages)

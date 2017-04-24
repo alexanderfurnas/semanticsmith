@@ -1,0 +1,163 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Fridolin~Linder}{Fridolin~Linder}{2017}]%
+        {Fridolin2017text}
+\bibfield{author}{\bibinfo{person}{Matthew Burgess Eugenia~Giraudy
+  Fridolin~Linder, Bruce~Desmarais}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{Text as Policy: Measuring Policy Similarity through
+  Bill Text Reuse}.  (\bibinfo{year}{2017}).
+\newblock
+\newblock
+\shownote{Working paper.}
+
+
+\bibitem[\protect\citeauthoryear{Furnas and Shipan}{Furnas and Shipan}{}]%
+        {Furnas2017ideal}
+\bibfield{author}{\bibinfo{person}{Alexander Furnas} {and}
+  \bibinfo{person}{Chuck Shipan}.}
+\newblock \showarticletitle{Using Model Legislation to Estimate Ideology Scores
+  for State Legislators}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Grimmer and Stewart}{Grimmer and
+  Stewart}{2013}]%
+        {grimmer2013text}
+\bibfield{author}{\bibinfo{person}{Justin Grimmer} {and}
+  \bibinfo{person}{Brandon~M Stewart}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Text as data: The promise and pitfalls of automatic
+  content analysis methods for political texts}.
+\newblock \bibinfo{journal}{{\em Political analysis\/}} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{267--297}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lowe and Benoit}{Lowe and Benoit}{2013}]%
+        {lowe2013validating}
+\bibfield{author}{\bibinfo{person}{Will Lowe} {and} \bibinfo{person}{Kenneth
+  Benoit}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Validating estimates of latent traits from textual
+  data using human judgment as a benchmark}.
+\newblock \bibinfo{journal}{{\em Political Analysis\/}} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{298--313}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Needleman and Wunsch}{Needleman and
+  Wunsch}{1970}]%
+        {needleman1970general}
+\bibfield{author}{\bibinfo{person}{Saul~B Needleman} {and}
+  \bibinfo{person}{Christian~D Wunsch}.} \bibinfo{year}{1970}\natexlab{}.
+\newblock \showarticletitle{A general method applicable to the search for
+  similarities in the amino acid sequence of two proteins}.
+\newblock \bibinfo{journal}{{\em Journal of molecular biology\/}}
+  \bibinfo{volume}{48}, \bibinfo{number}{3} (\bibinfo{year}{1970}),
+  \bibinfo{pages}{443--453}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Potthast, Stein, Barr{\'o}n-Cede{\~n}o, and
+  Rosso}{Potthast et~al\mbox{.}}{2010}]%
+        {potthast2010evaluation}
+\bibfield{author}{\bibinfo{person}{Martin Potthast}, \bibinfo{person}{Benno
+  Stein}, \bibinfo{person}{Alberto Barr{\'o}n-Cede{\~n}o}, {and}
+  \bibinfo{person}{Paolo Rosso}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{An evaluation framework for plagiarism detection}.
+  In \bibinfo{booktitle}{{\em Proceedings of the 23rd international conference
+  on computational linguistics: Posters}}. Association for Computational
+  Linguistics, \bibinfo{pages}{997--1005}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Roberts, Stewart, Tingley, Lucas, Leder-Luis,
+  Gadarian, Albertson, and Rand}{Roberts et~al\mbox{.}}{2014}]%
+        {roberts2014structural}
+\bibfield{author}{\bibinfo{person}{Margaret~E Roberts},
+  \bibinfo{person}{Brandon~M Stewart}, \bibinfo{person}{Dustin Tingley},
+  \bibinfo{person}{Christopher Lucas}, \bibinfo{person}{Jetson Leder-Luis},
+  \bibinfo{person}{Shana~Kushner Gadarian}, \bibinfo{person}{Bethany
+  Albertson}, {and} \bibinfo{person}{David~G Rand}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Structural Topic Models for Open-Ended Survey
+  Responses}.
+\newblock \bibinfo{journal}{{\em American Journal of Political Science\/}}
+  \bibinfo{volume}{58}, \bibinfo{number}{4} (\bibinfo{year}{2014}),
+  \bibinfo{pages}{1064--1082}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Smith, Cordell, and Dillon}{Smith
+  et~al\mbox{.}}{2013}]%
+        {smith2013infectious}
+\bibfield{author}{\bibinfo{person}{David~A Smith}, \bibinfo{person}{Ryan
+  Cordell}, {and} \bibinfo{person}{Elizabeth~Maddock Dillon}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Infectious texts: Modeling text reuse in
+  nineteenth-century newspapers}. In \bibinfo{booktitle}{{\em Big Data, 2013
+  IEEE International Conference on}}. IEEE, \bibinfo{pages}{86--94}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Smith, Cordell, Dillon, Stramp, and
+  Wilkerson}{Smith et~al\mbox{.}}{2014}]%
+        {smith2014detecting}
+\bibfield{author}{\bibinfo{person}{David~A Smith}, \bibinfo{person}{Ryan
+  Cordell}, \bibinfo{person}{Elizabeth~Maddock Dillon}, \bibinfo{person}{Nick
+  Stramp}, {and} \bibinfo{person}{John Wilkerson}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Detecting and modeling local text reuse}. In
+  \bibinfo{booktitle}{{\em Proceedings of the 14th ACM/IEEE-CS Joint Conference
+  on Digital Libraries}}. IEEE Press, \bibinfo{pages}{183--192}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Smith and Waterman}{Smith and
+  Waterman}{1981}]%
+        {smith1981identification}
+\bibfield{author}{\bibinfo{person}{Temple~F Smith} {and}
+  \bibinfo{person}{Michael~S Waterman}.} \bibinfo{year}{1981}\natexlab{}.
+\newblock \showarticletitle{Identification of common molecular subsequences}.
+\newblock \bibinfo{journal}{{\em Journal of molecular biology\/}}
+  \bibinfo{volume}{147}, \bibinfo{number}{1} (\bibinfo{year}{1981}),
+  \bibinfo{pages}{195--197}.
+\newblock
+
+
+\end{thebibliography}

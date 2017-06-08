@@ -1,0 +1,204 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Baron and Ferejohn}{1989}{baron1989bargaining}
+Baron, D.~P. and Ferejohn, J.~A.: 1989, Bargaining in legislatures., {\em
+  American political science review} {\bf 83}(04),~1181--1206.
+
+\harvarditem{Berry and Fowler}{2015}{berry2015cardinals}
+Berry, C.~R. and Fowler, A.: 2015, Cardinals or clerics? congressional
+  committees and the distribution of pork, {\em American Journal of Political
+  Science} .
+
+\harvarditem{Bird}{2006}{bird2006nltk}
+Bird, S.: 2006, Nltk: the natural language toolkit, {\em Proceedings of the
+  COLING/ACL on Interactive presentation sessions}, Association for
+  Computational Linguistics, pp.~69--72.
+
+\harvarditem[Box-Steffensmeier et~al.]{Box-Steffensmeier, Christenson and
+  Craig}{2015}{craig2015cue}
+Box-Steffensmeier, J.~M., Christenson, D.~P. and Craig, A.~W.: 2015, Cue-taking
+  in congress: Interest group signals from dear colleague letters.
+\newblock Presented at The Role of Special Interests in American Politics,
+  University of Michigan.
+
+\harvarditem{Bratton and Rouse}{2011}{bratton2011networks}
+Bratton, K.~A. and Rouse, S.~M.: 2011, Networks in the legislative arena: How
+  group dynamics affect cosponsorship, {\em Legislative Studies Quarterly} {\bf
+  36}(3),~423--460.
+
+\harvarditem[Burgess et~al.]{Burgess, Giraudy, Katz-Samuels, Walsh, Willis,
+  Haynes and Ghani}{2016}{burgess2016legislative}
+Burgess, M., Giraudy, E., Katz-Samuels, J., Walsh, J., Willis, D., Haynes, L.
+  and Ghani, R.: 2016, The legislative influence detector: Finding text reuse
+  in state legislation, {\em Proceedings of the 22nd ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining}, ACM, pp.~57--66.
+
+\harvarditem{Campbell}{1982}{campbell1982cosponsoring}
+Campbell, J.~E.: 1982, Cosponsoring legislation in the us congress, {\em
+  Legislative Studies Quarterly} pp.~415--422.
+
+\harvarditem{Cox and McCubbins}{2005}{cox2005setting}
+Cox, G.~W. and McCubbins, M.~D.: 2005, {\em Setting the agenda: Responsible
+  party government in the US House of Representatives}, Cambridge University
+  Press.
+
+\harvarditem{Craig}{2016}{craig2015room}
+Craig, A.: 2016, The room where it happens: Collaborative strategies in the
+  u.s. house of representatives.
+\newblock Presented at PolNet 2016.
+
+\harvarditem[Deerwester et~al.]{Deerwester, Dumais, Furnas, Landauer and
+  Harshman}{1990}{deerwester1990indexing}
+Deerwester, S., Dumais, S.~T., Furnas, G.~W., Landauer, T.~K. and Harshman, R.:
+  1990, Indexing by latent semantic analysis, {\em Journal of the American
+  society for information science} {\bf 41}(6),~391.
+
+\harvarditem{Fenno}{1978}{fenno1978home}
+Fenno, R.~F.: 1978, {\em Home style: House members in their districts}, Pearson
+  College Division.
+
+\harvarditem{Fowler}{2006}{fowler2006connecting}
+Fowler, J.~H.: 2006, Connecting the congress: A study of cosponsorship
+  networks, {\em Political Analysis} pp.~456--487.
+
+\harvarditem{Furnas and Shipan}{2017}{Furnas2017ideal}
+Furnas, A.~C. and Shipan, C.: 2017, Using model legislation to estimate
+  ideology scores for state legislators.
+\newblock A paper prepared for presentation at the Midwest Political Science
+  Association Annual Meeting, Chicago.
+
+\harvarditem[Furnas et~al.]{Furnas, Deerwester, Dumais, Landauer, Harshman,
+  Streeter and Lochbaum}{1988}{furnas1988information}
+Furnas, G.~W., Deerwester, S., Dumais, S.~T., Landauer, T.~K., Harshman, R.~A.,
+  Streeter, L.~A. and Lochbaum, K.~E.: 1988, Information retrieval using a
+  singular value decomposition model of latent semantic structure, {\em
+  Proceedings of the 11th annual international ACM SIGIR conference on Research
+  and development in information retrieval}, ACM, pp.~465--480.
+
+\harvarditem{Grimmer}{2010}{grimmer2010bayesian}
+Grimmer, J.: 2010, A bayesian hierarchical topic model for political texts:
+  Measuring expressed agendas in senate press releases, {\em Political
+  Analysis} pp.~1--35.
+
+\harvarditem[Grimmer et~al.]{Grimmer, Messing and
+  Westwood}{2012}{grimmer2012words}
+Grimmer, J., Messing, S. and Westwood, S.~J.: 2012, How words and money
+  cultivate a personal vote: The effect of legislator credit claiming on
+  constituent credit allocation, {\em American Political Science Review} {\bf
+  106}(04),~703--719.
+
+\harvarditem{Grimmer and Stewart}{2013}{grimmer2013text}
+Grimmer, J. and Stewart, B.~M.: 2013, Text as data: The promise and pitfalls of
+  automatic content analysis methods for political texts, {\em Political
+  analysis} pp.~267--297.
+
+\harvarditem{Hall}{1998}{hall1998participation}
+Hall, R.~L.: 1998, {\em Participation in congress}, Yale Univ Pr.
+
+\harvarditem{Hall and Deardorff}{2006}{hall2006lobbying}
+Hall, R.~L. and Deardorff, A.~V.: 2006, Lobbying as legislative subsidy, {\em
+  American Political Science Review} {\bf 100}(01),~69--84.
+
+\harvarditem{Kingdon}{1977}{kingdon1977models}
+Kingdon, J.~W.: 1977, Models of legislative voting, {\em The Journal of
+  Politics} {\bf 39}(3),~563--595.
+
+\harvarditem{Koger}{2003}{koger2003position}
+Koger, G.: 2003, Position taking and cosponsorship in the us house, {\em
+  Legislative Studies Quarterly} {\bf 28}(2),~225--246.
+
+\harvarditem[Lin et~al.]{Lin, Margolin and Lazer}{2014}{lin2014burst}
+Lin, Y.-R., Margolin, D. and Lazer, D.: 2014, Tracing coordination and
+  cooperation structures via semantic burst detection, {\em EAI Endorsed
+  Transactions on Collaborative Computing} {\bf 14}(2).
+
+\harvarditem[Lin et~al.]{Lin, Margolin and Lazer}{2015}{lin2015uncovering}
+Lin, Y.-R., Margolin, D. and Lazer, D.: 2015, Uncovering social semantics from
+  textual traces: A theory-driven approach and evidence from public statements
+  of us members of congress, {\em Journal of the Association for Information
+  Science and Technology} .
+
+\harvarditem[Linder et~al.]{Linder, Desmarais, Burgess and
+  Giraudy}{2017}{Fridolin2017text}
+Linder, F., Desmarais, B., Burgess, M. and Giraudy, E.: 2017, Text as policy:
+  Measuring policy similarity through bill text reuse.
+\newblock Working paper.
+
+\harvarditem{Lowe and Benoit}{2013}{lowe2013validating}
+Lowe, W. and Benoit, K.: 2013, Validating estimates of latent traits from
+  textual data using human judgment as a benchmark, {\em Political Analysis}
+  pp.~298--313.
+
+\harvarditem{Mayhew}{1974}{mayhew1974congress}
+Mayhew, D.~R.: 1974, {\em Congress: The electoral connection}, Yale University
+  Press.
+
+\harvarditem{Mikolov, Chen, Corrado and Dean}{2013}{mikolov2013efficient}
+Mikolov, T., Chen, K., Corrado, G. and Dean, J.: 2013, Efficient estimation of
+  word representations in vector space, {\em arXiv preprint arXiv:1301.3781} .
+
+\harvarditem{Mikolov, Yih and Zweig}{2013}{mikolov2013linguistic}
+Mikolov, T., Yih, W.-t. and Zweig, G.: 2013, Linguistic regularities in
+  continuous space word representations., {\em Hlt-naacl}, Vol.~13,
+  pp.~746--751.
+
+\harvarditem{Miller and Stokes}{1963}{miller1963constituency}
+Miller, W.~E. and Stokes, D.~E.: 1963, Constituency influence in congress, {\em
+  American political science review} {\bf 57}(01),~45--56.
+
+\harvarditem{Needleman and Wunsch}{1970}{needleman1970general}
+Needleman, S.~B. and Wunsch, C.~D.: 1970, A general method applicable to the
+  search for similarities in the amino acid sequence of two proteins, {\em
+  Journal of molecular biology} {\bf 48}(3),~443--453.
+
+\harvarditem{{\v R}eh{\r u}{\v r}ek and Sojka}{2010}{rehurek2010lrec}
+{\v R}eh{\r u}{\v r}ek, R. and Sojka, P.: 2010, {Software Framework for Topic
+  Modelling with Large Corpora}, {\em Proceedings of the LREC 2010 Workshop on
+  New Challenges for NLP Frameworks}, ELRA, Valletta, Malta, pp.~45--50.
+
+\harvarditem[Roberts et~al.]{Roberts, Stewart, Tingley, Lucas, Leder-Luis,
+  Gadarian, Albertson and Rand}{2014}{roberts2014structural}
+Roberts, M.~E., Stewart, B.~M., Tingley, D., Lucas, C., Leder-Luis, J.,
+  Gadarian, S.~K., Albertson, B. and Rand, D.~G.: 2014, Structural topic models
+  for open-ended survey responses, {\em American Journal of Political Science}
+  {\bf 58}(4),~1064--1082.
+
+\harvarditem{Shepsle and Weingast}{1987}{shepsle1987institutional}
+Shepsle, K.~A. and Weingast, B.~R.: 1987, The institutional foundations of
+  committee power, {\em American Political Science Review} {\bf
+  81}(01),~85--104.
+
+\harvarditem[Smith et~al.]{Smith, Cordell and
+  Dillon}{2013}{smith2013infectious}
+Smith, D.~A., Cordell, R. and Dillon, E.~M.: 2013, Infectious texts: Modeling
+  text reuse in nineteenth-century newspapers, {\em Big Data, 2013 IEEE
+  International Conference on}, IEEE, pp.~86--94.
+
+\harvarditem[Smith et~al.]{Smith, Cordell, Dillon, Stramp and
+  Wilkerson}{2014}{smith2014detecting}
+Smith, D.~A., Cordell, R., Dillon, E.~M., Stramp, N. and Wilkerson, J.: 2014,
+  Detecting and modeling local text reuse, {\em Proceedings of the 14th
+  ACM/IEEE-CS Joint Conference on Digital Libraries}, IEEE Press, pp.~183--192.
+
+\harvarditem{Smith and Waterman}{1981}{smith1981identification}
+Smith, T.~F. and Waterman, M.~S.: 1981, Identification of common molecular
+  subsequences, {\em Journal of molecular biology} {\bf 147}(1),~195--197.
+
+\harvarditem[Wilkerson et~al.]{Wilkerson, Smith and
+  Stramp}{2015}{wilkerson2015tracing}
+Wilkerson, J., Smith, D. and Stramp, N.: 2015, Tracing the flow of policy ideas
+  in legislatures: A text reuse approach, {\em American Journal of Political
+  Science} {\bf 59}(4),~943--956.
+
+\harvarditem{Wilson and Young}{1997}{wilson1997cosponsorship}
+Wilson, R.~K. and Young, C.~D.: 1997, Cosponsorship in the us congress, {\em
+  Legislative Studies Quarterly} pp.~25--43.
+
+\harvarditem[Zhang et~al.]{Zhang, Friend, Traud, Porter, Fowler and
+  Mucha}{2008}{zhang2008community}
+Zhang, Y., Friend, A.~J., Traud, A.~L., Porter, M.~A., Fowler, J.~H. and Mucha,
+  P.~J.: 2008, Community structure in congressional cosponsorship networks,
+  {\em Physica A: Statistical Mechanics and its Applications} {\bf
+  387}(7),~1705--1712.
+
+\end{thebibliography}

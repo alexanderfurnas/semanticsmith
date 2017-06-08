@@ -37,6 +37,16 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
+\bibitem[\protect\citeauthoryear{Fenno}{Fenno}{1978}]%
+        {fenno1978home}
+\bibfield{author}{\bibinfo{person}{Richard~F Fenno}.}
+  \bibinfo{year}{1978}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Home style: House members in their
+  districts}}.
+\newblock \bibinfo{publisher}{Pearson College Division}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Fridolin~Linder}{Fridolin~Linder}{2017}]%
         {Fridolin2017text}
 \bibfield{author}{\bibinfo{person}{Matthew Burgess Eugenia~Giraudy
@@ -157,6 +167,21 @@
 \newblock \bibinfo{journal}{{\em Journal of molecular biology\/}}
   \bibinfo{volume}{147}, \bibinfo{number}{1} (\bibinfo{year}{1981}),
   \bibinfo{pages}{195--197}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Zhang, Friend, Traud, Porter, Fowler, and
+  Mucha}{Zhang et~al\mbox{.}}{2008}]%
+        {zhang2008community}
+\bibfield{author}{\bibinfo{person}{Yan Zhang}, \bibinfo{person}{Andrew~J
+  Friend}, \bibinfo{person}{Amanda~L Traud}, \bibinfo{person}{Mason~A Porter},
+  \bibinfo{person}{James~H Fowler}, {and} \bibinfo{person}{Peter~J Mucha}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Community structure in Congressional cosponsorship
+  networks}.
+\newblock \bibinfo{journal}{{\em Physica A: Statistical Mechanics and its
+  Applications\/}} \bibinfo{volume}{387}, \bibinfo{number}{7}
+  (\bibinfo{year}{2008}), \bibinfo{pages}{1705--1712}.
 \newblock
 
 

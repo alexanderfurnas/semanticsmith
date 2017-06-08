@@ -5,7 +5,7 @@ The style file: ../ACM-Reference-Format.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: ../sigproc.bib
-I was expecting a `,' or a `}'---line 44 of file ../sigproc.bib
+I was expecting a `,' or a `}'---line 70 of file ../sigproc.bib
  :   
  :   booktitle={A paper prepared for presentation at the Midwest Political Science Association Annual Meeting, Chicago},
 (Error may have been on previous line)
@@ -21,6 +21,7 @@ while executing---line 3371 of file ../ACM-Reference-Format.bst
 Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
 while executing---line 3371 of file ../ACM-Reference-Format.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty address in fenno1978home
 Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
 while executing---line 3469 of file ../ACM-Reference-Format.bst
 Too many commas in name 1 of "Fridolin Linder, Bruce Desmarais, Matthew Burgess, Eugenia Giraudy" for entry Fridolin2017text
@@ -40,45 +41,45 @@ Warning--empty publisher in smith2013infectious
 Warning--empty address in smith2013infectious
 Warning--empty publisher in smith2014detecting
 Warning--empty address in smith2014detecting
-You've used 10 entries,
+You've used 12 entries,
             5706 wiz_defined-function locations,
-            1366 strings with 17287 characters,
-and the built_in function-call counts, 11767 in all, are:
-= -- 1543
-> -- 462
+            1378 strings with 17645 characters,
+and the built_in function-call counts, 13850 in all, are:
+= -- 1815
+> -- 556
 < -- 0
-+ -- 148
-- -- 168
-* -- 795
-:= -- 1225
-add.period$ -- 51
-call.type$ -- 10
-change.case$ -- 71
-chr.to.int$ -- 10
-cite$ -- 23
-duplicate$ -- 915
-empty$ -- 669
-format.name$ -- 204
-if$ -- 2900
++ -- 176
+- -- 200
+* -- 950
+:= -- 1462
+add.period$ -- 62
+call.type$ -- 12
+change.case$ -- 86
+chr.to.int$ -- 12
+cite$ -- 26
+duplicate$ -- 1068
+empty$ -- 782
+format.name$ -- 240
+if$ -- 3405
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 40
-newline$ -- 117
-num.names$ -- 80
-pop$ -- 429
+missing$ -- 46
+newline$ -- 133
+num.names$ -- 96
+pop$ -- 496
 preamble$ -- 1
-purify$ -- 121
+purify$ -- 146
 quote$ -- 0
-skip$ -- 347
+skip$ -- 402
 stack$ -- 0
-substring$ -- 808
-swap$ -- 92
+substring$ -- 950
+swap$ -- 109
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 230
-warning$ -- 13
-while$ -- 88
+type$ -- 261
+warning$ -- 14
+while$ -- 103
 width$ -- 0
-write$ -- 206
+write$ -- 240
 (There were 9 error messages)

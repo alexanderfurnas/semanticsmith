@@ -1,0 +1,81 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: New_Draft.aux
+The style file: kluwer.bst
+Database file #1: ../sigproc.bib
+Name 2 in "Box-Steffensmeier, Janet M. and Christenson, Dino P., and Craig, Alison W." has a comma at the end for entry craig2015cue
+while executing---line 1224 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1224 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1224 of file kluwer.bst
+Name 2 in "Box-Steffensmeier, Janet M. and Christenson, Dino P., and Craig, Alison W." has a comma at the end for entry craig2015cue
+while executing---line 1260 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1260 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1264 of file kluwer.bst
+Name 2 in "Box-Steffensmeier, Janet M. and Christenson, Dino P., and Craig, Alison W." has a comma at the end for entry craig2015cue
+while executing---line 1264 of file kluwer.bst
+Name 2 in "Box-Steffensmeier, Janet M. and Christenson, Dino P., and Craig, Alison W." has a comma at the end for entry craig2015cue
+while executing---line 1296 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1296 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1296 of file kluwer.bst
+Name 2 in "Box-Steffensmeier, Janet M. and Christenson, Dino P., and Craig, Alison W." has a comma at the end for entry craig2015cue
+while executing---line 1329 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1329 of file kluwer.bst
+Name 2 in "Box-Steffensmeier, Janet M. and Christenson, Dino P., and Craig, Alison W." has a comma at the end for entry craig2015cue
+while executing---line 1348 of file kluwer.bst
+Name 2 in "Box-Steffensmeier, Janet M. and Christenson, Dino P., and Craig, Alison W." has a comma at the end for entry craig2015cue
+while executing---line 1348 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1348 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1348 of file kluwer.bst
+Name 1 in "Linder, Fridolin, and Desmarais, Bruce and Burgess, Matthew and Giraudy, Eugenia" has a comma at the end for entry Fridolin2017text
+while executing---line 1348 of file kluwer.bst
+You've used 39 entries,
+            2880 wiz_defined-function locations,
+            868 strings with 11693 characters,
+and the built_in function-call counts, 179623 in all, are:
+= -- 29405
+> -- 2423
+< -- 1
++ -- 14071
+- -- 742
+* -- 15493
+:= -- 35803
+add.period$ -- 43
+call.type$ -- 39
+change.case$ -- 542
+chr.to.int$ -- 39
+cite$ -- 39
+duplicate$ -- 626
+empty$ -- 1280
+format.name$ -- 887
+if$ -- 32379
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 39
+newline$ -- 124
+num.names$ -- 403
+pop$ -- 135
+preamble$ -- 1
+purify$ -- 585
+quote$ -- 0
+skip$ -- 618
+stack$ -- 0
+substring$ -- 41663
+swap$ -- 141
+text.length$ -- 547
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 148
+warning$ -- 0
+while$ -- 887
+width$ -- 0
+write$ -- 515
+(There were 17 error messages)

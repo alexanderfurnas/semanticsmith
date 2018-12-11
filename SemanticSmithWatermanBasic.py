@@ -9,6 +9,8 @@
 import nltk
 from gensim.models.keyedvectors import KeyedVectors
 from nltk.corpus import stopwords
+import numpy as np
+
 
 #hardcoded stuff that ultimately shouldn't be
 scale = 10
@@ -16,8 +18,6 @@ match_award      = scale
 gap_penalty      = -scale/2 # both for opening and extanding
 word_vectors = KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
 stop = set(stopwords.words('english'))
-
-
 
 #definitions of functions
 def zeros(shape):
@@ -85,11 +85,11 @@ def finalize(align1, align2):
     
     identity = float(identity) / len(align1) * 100
     
-    print 'Identity =', "%3.3f" % identity, 'percent'
-    print 'Score =', score
-    print align1
-    print symbol
-    print align2
+    print('Identity =', "%3.3f" % identity, 'percent')
+    print('Score =', score)
+    print(align1)
+    print(symbol)
+    print(align2)
 
 
 def water(seq1, seq2):

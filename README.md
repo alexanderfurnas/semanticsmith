@@ -66,6 +66,11 @@ tibble(
   ssw_batch_align(text_a, text_b, sim)
 ```
 
+## Documentation
+
+- **[Python Getting Started Guide](python/docs/getting-started.md)** — similarity functions, alignment options, batch comparison, visualization
+- **[R Getting Started Vignette](r/vignettes/getting-started.Rmd)** — tidyverse workflows, embeddings, pipe-friendly batch alignment
+
 ## Project Structure
 
 ```

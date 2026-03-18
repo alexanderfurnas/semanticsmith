@@ -7,15 +7,15 @@ Monorepo implementing **Semantic Smith-Waterman (SSW)** — a text similarity al
 ## Architecture
 
 - **`csrc/`** — Shared C implementation of Gotoh's algorithm (affine gap penalties, O(nm)). Operates on a pre-computed similarity matrix passed from the language wrappers.
-- **`python/`** — Python package using Cython to wrap the C core. Falls back to pure-Python `_fallback.py` if the C extension isn't compiled.
-- **`r/`** — R package using Rcpp to wrap the C core. Tidyverse-native: tibble outputs, pipe-friendly API, tidy eval column references.
+- **`semanticsmith-py/`** — Python package using Cython to wrap the C core. Falls back to pure-Python `_fallback.py` if the C extension isn't compiled.
+- **`semanticsmith-r/`** — R package using Rcpp to wrap the C core. Tidyverse-native: tibble outputs, pipe-friendly API, tidy eval column references.
 - **`legacy/`** — Original scripts, notebooks, and analysis from the research project.
 
 ## Build & Test
 
 ### Python
 ```bash
-cd python
+cd semanticsmith-py
 pip install ".[dev]"         # install with dev dependencies
 python -m pytest tests/ -v   # run all tests
 python -m pytest tests/test_align.py::TestAlign::test_identical_strings  # single test
@@ -25,8 +25,8 @@ The `setup.py` copies `csrc/*.{c,h}` into `src/semanticsmith/_csrc/` at build ti
 
 ### R
 ```r
-devtools::install("r/")      # build and install
-devtools::test("r/")         # run testthat suite
+devtools::install("semanticsmith-r/")      # build and install
+devtools::test("semanticsmith-r/")         # run testthat suite
 ```
 
 ### C core (standalone)

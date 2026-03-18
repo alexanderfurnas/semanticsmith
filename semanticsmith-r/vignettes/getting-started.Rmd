@@ -23,8 +23,8 @@ batch operations are pipe-friendly, and column references use tidy evaluation.
 ## Installation
 
 ```{r eval = FALSE}
-# From the repository root:
-devtools::install("r/")
+# From GitHub:
+remotes::install_github("alexanderfurnas/semanticsmith", subdir = "semanticsmith-r")
 ```
 
 ```{r}

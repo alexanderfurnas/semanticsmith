@@ -17,17 +17,17 @@ Adapts the [Smith-Waterman algorithm](https://en.wikipedia.org/wiki/Smith%E2%80%
 ### Python
 
 ```bash
-pip install git+https://github.com/alexanderfurnas/semanticsmith.git#subdirectory=python
+pip install git+https://github.com/alexanderfurnas/semanticsmith.git#subdirectory=semanticsmith-py
 
 # With optional gensim support:
-pip install "semanticsmith[gensim] @ git+https://github.com/alexanderfurnas/semanticsmith.git#subdirectory=python"
+pip install "semanticsmith[gensim] @ git+https://github.com/alexanderfurnas/semanticsmith.git#subdirectory=semanticsmith-py"
 ```
 
 ### R
 
 ```r
 # Requires C compiler (Xcode CLI tools on macOS, Rtools on Windows)
-remotes::install_github("alexanderfurnas/semanticsmith", subdir = "r")
+remotes::install_github("alexanderfurnas/semanticsmith", subdir = "semanticsmith-r")
 ```
 
 ## Quick Start
@@ -77,16 +77,16 @@ tibble(
 
 ## Documentation
 
-- **[Python Getting Started Guide](python/docs/getting-started.md)** — similarity functions, alignment options, batch comparison, visualization
-- **[R Getting Started Vignette](r/vignettes/getting-started.Rmd)** — tidyverse workflows, embeddings, pipe-friendly batch alignment
+- **[Python Getting Started Guide](semanticsmith-py/docs/getting-started.md)** — similarity functions, alignment options, batch comparison, visualization
+- **[R Getting Started Vignette](semanticsmith-r/vignettes/getting-started.Rmd)** — tidyverse workflows, embeddings, pipe-friendly batch alignment
 
 ## Project Structure
 
 ```
-├── csrc/           # Shared C core (Gotoh's algorithm)
-├── python/         # Python package (Cython wrapper)
-├── r/              # R package (Rcpp wrapper, tidyverse-style)
-└── legacy/         # Original scripts and notebooks
+├── csrc/               # Shared C core (Gotoh's algorithm)
+├── semanticsmith-py/   # Python package (Cython wrapper)
+├── semanticsmith-r/    # R package (Rcpp wrapper, tidyverse-style)
+└── legacy/             # Original scripts and notebooks
 ```
 
 ## Acknowledgments

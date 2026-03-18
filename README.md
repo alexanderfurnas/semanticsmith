@@ -80,6 +80,10 @@ tibble(
 └── legacy/         # Original scripts and notebooks
 ```
 
+## Acknowledgments
+
+The first implementation of this algorithm was developed in collaboration with [Ben Edwards](https://github.com/bjedwards). The original codebase is available at [bjedwards/SemanticSmithWaterman](https://github.com/bjedwards/SemanticSmithWaterman).
+
 ## License
 
 GPL-3.0-or-later

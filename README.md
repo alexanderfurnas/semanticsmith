@@ -12,13 +12,28 @@ Adapts the [Smith-Waterman algorithm](https://en.wikipedia.org/wiki/Smith%E2%80%
 - **Batch comparison** — pairwise alignment of multiple texts
 - **Alignment visualization** — colored terminal output (Python), formatted printing (R)
 
-## Python
+## Installation
+
+### Python
 
 ```bash
-cd python && pip install .
-# With gensim support:
+cd python
+pip install .
+
+# With optional gensim support:
 pip install ".[gensim]"
 ```
+
+### R
+
+```r
+# From the repository root (requires C compiler):
+devtools::install("r/")
+```
+
+## Quick Start
+
+### Python
 
 ```python
 from semanticsmith import align, similarity
@@ -40,12 +55,7 @@ texts = ["the cat sat", "the dog sat", "a fish swam"]
 results = batch_align(texts, sim)
 ```
 
-## R
-
-```r
-# Install from source (requires C compiler)
-devtools::install("r/")
-```
+### R
 
 ```r
 library(semanticsmith)

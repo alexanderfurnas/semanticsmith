@@ -1,0 +1,29 @@
+Package: semanticsmith
+Type: Package
+Title: Semantic Smith-Waterman Local Alignment for Text
+Version: 0.1.0
+Description: Performs local sequence alignment on tokenized text using
+    the Smith-Waterman algorithm with arbitrary word similarity functions.
+    Supports affine gap penalties via a shared C core for performance.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+VignetteBuilder: knitr
+LinkingTo:
+    Rcpp
+Imports:
+    Rcpp,
+    tibble,
+    dplyr,
+    rlang,
+    vctrs
+Suggests:
+    testthat (>= 3.0.0),
+    tidytext,
+    ggplot2,
+    word2vec,
+    knitr,
+    rmarkdown,
+    tidyr
+Config/testthat/edition: 3

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "Cython>=3.0", "numpy>=1.24"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semanticsmith"
+version = "0.1.0"
+description = "Semantic Smith-Waterman local alignment for text similarity"
+readme = "README.md"
+license = {text = "GPL-3.0-or-later"}
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+gensim = ["gensim>=4.0"]
+dev = [
+    "pytest>=7.0",
+    "Cython>=3.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

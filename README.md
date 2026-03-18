@@ -78,7 +78,7 @@ tibble(
 ## Documentation
 
 - **[Python Getting Started Guide](semanticsmith-py/docs/getting-started.md)** — similarity functions, alignment options, batch comparison, visualization
-- **[R Getting Started Vignette](semanticsmith-r/vignettes/getting-started.Rmd)** — tidyverse workflows, embeddings, pipe-friendly batch alignment
+- **[R Getting Started Guide](semanticsmith-r/docs/getting-started.md)** — tidyverse workflows, embeddings, pipe-friendly batch alignment
 
 ## Project Structure
 

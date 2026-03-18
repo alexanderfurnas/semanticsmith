@@ -88,7 +88,7 @@ test_that("sim_from_embeddings gives scale for identical words", {
 })
 
 test_that("sim_from_embeddings computes cosine similarity", {
-  emb <- matrix(c(1, 0, 1, 0), nrow = 2, byrow = TRUE)
+  emb <- matrix(c(1, 0, 0, 1), nrow = 2, byrow = TRUE)
   rownames(emb) <- c("cat", "dog")
   # cosine(cat, dog) = 0, score = (0 + -0.5) * 10 = -5
   sim <- sim_from_embeddings(emb, offset = -0.5, scale = 10)

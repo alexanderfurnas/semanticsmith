@@ -30,11 +30,19 @@ sim <- sim_from_function(function(a, b) ifelse(a == b, 10, -5))
 # Align two sentences
 result <- ssw_align("the cat sat on the mat", "the cat sat on the rug", sim)
 result
+#> # A tibble: 1 × 6
+#>   score identity align_len n_gaps aligned1  aligned2 
+#>   <dbl>    <dbl>     <int>  <int> <list>    <list>   
+#> 1    50        1         5      0 <chr [5]> <chr [5]>
 ```
 
 ``` r
 # Pretty-print the alignment
 ssw_print(result)
+#> Score: 50.00  Identity: 100.0%  Length: 5  Gaps: 0
+#> the cat sat on  the 
+#> |   |   |   |   |   
+#> the cat sat on  the
 ```
 
 ## Similarity Functions
@@ -51,7 +59,9 @@ The simplest option — words either match or they don’t:
 ``` r
 sim <- sim_from_function(function(a, b) ifelse(a == b, 10, -5))
 sim("cat", "cat")   # 10
+#> [1] 10
 sim("cat", "dog")   # -5
+#> [1] -5
 ```
 
 ### Custom functions
@@ -68,6 +78,10 @@ my_sim <- sim_from_function(function(a, b) {
 
 result <- ssw_align("the cat sat", "the car set", my_sim)
 ssw_print(result)
+#> Score: 14.00  Identity: 33.3%  Length: 3  Gaps: 0
+#> the cat sat 
+#> |   ~   ~   
+#> the car set
 ```
 
 ### From word embeddings
@@ -101,8 +115,11 @@ rownames(emb) <- c("cat", "dog", "fish", "pet")
 sim <- sim_from_embeddings(emb, offset = -0.5, scale = 10)
 
 sim("cat", "cat")   # 10 (identical words always return scale)
+#> [1] 10
 sim("cat", "dog")   # high score (similar vectors)
+#> [1] 4.938837
 sim("cat", "fish")  # low score (orthogonal vectors)
+#> [1] -5
 ```
 
 **Parameters:**
@@ -129,7 +146,9 @@ vocab <- c("cat", "dog", "fish")
 
 sim <- sim_from_matrix(mat, vocab, default = -5)
 sim("cat", "dog")    # 6
+#> [1] 6
 sim("cat", "whale")  # -5 (not in vocab)
+#> [1] -5
 ```
 
 ## Alignment Details
@@ -142,6 +161,10 @@ sim("cat", "whale")  # -5 (not in vocab)
 sim <- sim_from_function(function(a, b) ifelse(a == b, 10, -5))
 result <- ssw_align("the cat sat on the mat", "a dog sat on a rug", sim)
 result
+#> # A tibble: 1 × 6
+#>   score identity align_len n_gaps aligned1  aligned2 
+#>   <dbl>    <dbl>     <int>  <int> <list>    <list>   
+#> 1    20        1         2      0 <chr [2]> <chr [2]>
 ```
 
 | Column | Type | Description |
@@ -157,7 +180,9 @@ Access the aligned sequences:
 
 ``` r
 result$aligned1[[1]]
+#> [1] "sat" "on"
 result$aligned2[[1]]
+#> [1] "sat" "on"
 ```
 
 ### Gap penalties
@@ -183,6 +208,12 @@ tibble(
   score = c(result_default$score, result_strict$score, result_lenient$score),
   gaps = c(result_default$n_gaps, result_strict$n_gaps, result_lenient$n_gaps)
 )
+#> # A tibble: 3 × 3
+#>   mode    score  gaps
+#>   <chr>   <dbl> <int>
+#> 1 default  23       2
+#> 2 strict   20       0
+#> 3 lenient  27.5     2
 ```
 
 Both values should be **negative**. Larger magnitude = harsher penalty.
@@ -195,7 +226,15 @@ character vector of pre-tokenized words:
 ``` r
 # These are equivalent:
 ssw_align("the cat sat", "the dog sat", sim)
+#> # A tibble: 1 × 6
+#>   score identity align_len n_gaps aligned1  aligned2 
+#>   <dbl>    <dbl>     <int>  <int> <list>    <list>   
+#> 1    15    0.667         3      0 <chr [3]> <chr [3]>
 ssw_align(c("the", "cat", "sat"), c("the", "dog", "sat"), sim)
+#> # A tibble: 1 × 6
+#>   score identity align_len n_gaps aligned1  aligned2 
+#>   <dbl>    <dbl>     <int>  <int> <list>    <list>   
+#> 1    15    0.667         3      0 <chr [3]> <chr [3]>
 ```
 
 For custom tokenization (e.g., with `tidytext` or `tokenizers`):
@@ -223,6 +262,7 @@ result <- ssw_align(
   sim
 )
 result$aligned1[[1]]  # Just "the", "cat", "sat"
+#> [1] "the" "cat" "sat"
 ```
 
 ## Batch Comparison
@@ -245,6 +285,12 @@ df <- tibble(
 df |>
   ssw_batch_align(text_a, text_b, sim) |>
   select(speaker, ssw_score, ssw_identity, ssw_n_gaps)
+#> # A tibble: 3 × 4
+#>   speaker ssw_score ssw_identity ssw_n_gaps
+#>   <chr>       <dbl>        <dbl>      <int>
+#> 1 Alice          35         0.8           0
+#> 2 Bob            25         0.75          0
+#> 3 Carol          25         0.75          0
 ```
 
 ### Filtering and analyzing results
@@ -256,6 +302,13 @@ df |>
   ssw_batch_align(text_a, text_b, sim) |>
   filter(ssw_identity > 0.5) |>
   arrange(desc(ssw_score))
+#> # A tibble: 3 × 9
+#>   speaker text_a          text_b ssw_score ssw_identity ssw_align_len ssw_n_gaps
+#>   <chr>   <chr>           <chr>      <dbl>        <dbl>         <int>      <int>
+#> 1 Alice   the cat sat on… the d…        35         0.8              5          0
+#> 2 Bob     she sells sea … she s…        25         0.75             4          0
+#> 3 Carol   how much wood … how m…        25         0.75             4          0
+#> # ℹ 2 more variables: ssw_aligned1 <list>, ssw_aligned2 <list>
 ```
 
 ### All-pairs comparison
@@ -276,6 +329,12 @@ pairs <- tidyr::expand_grid(i = seq_along(texts), j = seq_along(texts)) |>
 pairs |>
   ssw_batch_align(text_a, text_b, sim) |>
   select(i, j, ssw_score, ssw_identity)
+#> # A tibble: 3 × 4
+#>       i     j ssw_score ssw_identity
+#>   <int> <int>     <dbl>        <dbl>
+#> 1     1     2        35          0.8
+#> 2     1     3        10          1  
+#> 3     2     3        10          1
 ```
 
 ## Visualization
@@ -283,6 +342,10 @@ pairs |>
 ``` r
 result <- ssw_align("the cat sat on the mat", "the dog sat on the rug", sim)
 ssw_print(result)
+#> Score: 35.00  Identity: 80.0%  Length: 5  Gaps: 0
+#> the cat sat on  the 
+#> |   ~   |   |   |   
+#> the dog sat on  the
 ```
 
 `ssw_print()` shows a three-line view:

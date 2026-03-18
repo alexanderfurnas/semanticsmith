@@ -27,7 +27,7 @@ batch operations are pipe-friendly, and column references use tidy evaluation.
 remotes::install_github("alexanderfurnas/semanticsmith", subdir = "semanticsmith-r")
 ```
 
-```{r}
+```{r message = FALSE, warning = FALSE}
 library(semanticsmith)
 library(dplyr)
 library(tibble)

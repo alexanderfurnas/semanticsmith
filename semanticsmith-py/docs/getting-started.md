@@ -8,11 +8,10 @@ semantic similarity between words.
 ## Installation
 
 ```bash
-cd python
-pip install .
+pip install "git+https://github.com/alexanderfurnas/semanticsmith.git#subdirectory=semanticsmith-py"
 
 # With gensim support (optional):
-pip install ".[gensim]"
+pip install "semanticsmith[gensim] @ git+https://github.com/alexanderfurnas/semanticsmith.git#subdirectory=semanticsmith-py"
 ```
 
 ## Quick Start

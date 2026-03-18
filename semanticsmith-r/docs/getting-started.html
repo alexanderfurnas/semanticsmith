@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Getting Started with semanticsmith</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Getting Started with semanticsmith</h1>
+
+
+
+<p><code>semanticsmith</code> performs local text alignment using the
+Smith-Waterman algorithm with any word similarity function you choose.
+It finds the best-matching subsequences between two texts, accounting
+for insertions, deletions, and semantic word similarity. The API is
+tidyverse-native: results are tibbles, batch operations are
+pipe-friendly, and column references use tidy evaluation.</p>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># From GitHub:</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;alexanderfurnas/semanticsmith&quot;</span>, <span class="at">subdir =</span> <span class="st">&quot;semanticsmith-r&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(semanticsmith)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">library</span>(tibble)</span></code></pre></div>
+</div>
+<div id="quick-start" class="section level2">
+<h2>Quick Start</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Create a simple exact-match similarity function</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">sim_from_function</span>(<span class="cf">function</span>(a, b) <span class="fu">ifelse</span>(a <span class="sc">==</span> b, <span class="dv">10</span>, <span class="sc">-</span><span class="dv">5</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Align two sentences</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">ssw_align</span>(<span class="st">&quot;the cat sat on the mat&quot;</span>, <span class="st">&quot;the cat sat on the rug&quot;</span>, sim)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>result</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 6</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;   score identity align_len n_gaps aligned1  aligned2 </span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;int&gt;  &lt;int&gt; &lt;list&gt;    &lt;list&gt;   </span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 1    50        1         5      0 &lt;chr [5]&gt; &lt;chr [5]&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Pretty-print the alignment</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">ssw_print</span>(result)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; Score: 50.00  Identity: 100.0%  Length: 5  Gaps: 0</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; the cat sat on  the </span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; |   |   |   |   |   </span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; the cat sat on  the</span></span></code></pre></div>
+</div>
+<div id="similarity-functions" class="section level2">
+<h2>Similarity Functions</h2>
+<p>The core design principle: <strong>you provide the similarity
+function</strong>. This is any R function that takes two words
+(character scalars) and returns a numeric score. Positive values
+indicate similarity; negative values indicate dissimilarity.</p>
+<div id="constant-exact-match-only" class="section level3">
+<h3>Constant (exact match only)</h3>
+<p>The simplest option — words either match or they don’t:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">sim_from_function</span>(<span class="cf">function</span>(a, b) <span class="fu">ifelse</span>(a <span class="sc">==</span> b, <span class="dv">10</span>, <span class="sc">-</span><span class="dv">5</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">sim</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;cat&quot;</span>)   <span class="co"># 10</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; [1] 10</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="fu">sim</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>)   <span class="co"># -5</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; [1] -5</span></span></code></pre></div>
+</div>
+<div id="custom-functions" class="section level3">
+<h3>Custom functions</h3>
+<p>Write any similarity logic:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Partial credit for shared first letter</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>my_sim <span class="ot">&lt;-</span> <span class="fu">sim_from_function</span>(<span class="cf">function</span>(a, b) {</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="cf">if</span> (a <span class="sc">==</span> b) <span class="fu">return</span>(<span class="dv">10</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">substr</span>(a, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">==</span> <span class="fu">substr</span>(b, <span class="dv">1</span>, <span class="dv">1</span>)) <span class="fu">return</span>(<span class="dv">2</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  <span class="sc">-</span><span class="dv">5</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>})</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">ssw_align</span>(<span class="st">&quot;the cat sat&quot;</span>, <span class="st">&quot;the car set&quot;</span>, my_sim)</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="fu">ssw_print</span>(result)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; Score: 14.00  Identity: 33.3%  Length: 3  Gaps: 0</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt; the cat sat </span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; |   ~   ~   </span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; the car set</span></span></code></pre></div>
+</div>
+<div id="from-word-embeddings" class="section level3">
+<h3>From word embeddings</h3>
+<p>Use any embedding matrix with row names as vocabulary. Works with
+output from the <code>word2vec</code>, <code>text2vec</code>, or
+<code>wordVectors</code> packages:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Example with the word2vec package</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">library</span>(word2vec)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">word2vec</span>(<span class="at">x =</span> my_corpus, <span class="at">dim =</span> <span class="dv">100</span>, <span class="at">iter =</span> <span class="dv">20</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>emb <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(model)</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">sim_from_embeddings</span>(emb, <span class="at">offset =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">scale =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>The scoring formula is:
+<code>score = (cosine_similarity + offset) × scale</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Small example to demonstrate</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>emb <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">1.0</span>, <span class="fl">0.0</span>,    <span class="co"># &quot;cat&quot;  - points along dim1</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="fl">0.9</span>, <span class="fl">0.1</span>,    <span class="co"># &quot;dog&quot;  - close to cat</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>    <span class="fl">0.0</span>, <span class="fl">1.0</span>,    <span class="co"># &quot;fish&quot; - orthogonal to cat</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>    <span class="fl">0.7</span>, <span class="fl">0.7</span>),   <span class="co"># &quot;pet&quot;  - between cat and fish</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>)</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="fu">rownames</span>(emb) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;pet&quot;</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">sim_from_embeddings</span>(emb, <span class="at">offset =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">scale =</span> <span class="dv">10</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="fu">sim</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;cat&quot;</span>)   <span class="co"># 10 (identical words always return scale)</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; [1] 10</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="fu">sim</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>)   <span class="co"># high score (similar vectors)</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; [1] 4.938837</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="fu">sim</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;fish&quot;</span>)  <span class="co"># low score (orthogonal vectors)</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; [1] -5</span></span></code></pre></div>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>offset</code> (default -0.5): Shifts cosine similarity before
+scaling. With -0.5, words need cosine &gt; 0.5 to contribute positively
+to alignment.</li>
+<li><code>scale</code> (default 10): Multiplier. Larger values amplify
+semantic differences relative to gap penalties.</li>
+<li><code>default</code> (default -5): Score for out-of-vocabulary word
+pairs.</li>
+<li><code>floor</code> (default = <code>default</code>): Minimum
+possible score (clamp).</li>
+</ul>
+</div>
+<div id="from-a-pre-computed-similarity-matrix" class="section level3">
+<h3>From a pre-computed similarity matrix</h3>
+<p>If you have a full V×V pairwise similarity matrix:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">10</span>,  <span class="dv">6</span>, <span class="sc">-</span><span class="dv">2</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>     <span class="dv">6</span>, <span class="dv">10</span>, <span class="sc">-</span><span class="dv">3</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>    <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">10</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>)</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>vocab <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;fish&quot;</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">sim_from_matrix</span>(mat, vocab, <span class="at">default =</span> <span class="sc">-</span><span class="dv">5</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="fu">sim</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>)    <span class="co"># 6</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt; [1] 6</span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="fu">sim</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;whale&quot;</span>)  <span class="co"># -5 (not in vocab)</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt; [1] -5</span></span></code></pre></div>
+</div>
+</div>
+<div id="alignment-details" class="section level2">
+<h2>Alignment Details</h2>
+<div id="result-structure" class="section level3">
+<h3>Result structure</h3>
+<p><code>ssw_align()</code> returns a single-row tibble:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">sim_from_function</span>(<span class="cf">function</span>(a, b) <span class="fu">ifelse</span>(a <span class="sc">==</span> b, <span class="dv">10</span>, <span class="sc">-</span><span class="dv">5</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">ssw_align</span>(<span class="st">&quot;the cat sat on the mat&quot;</span>, <span class="st">&quot;a dog sat on a rug&quot;</span>, sim)</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>result</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 6</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt;   score identity align_len n_gaps aligned1  aligned2 </span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;int&gt;  &lt;int&gt; &lt;list&gt;    &lt;list&gt;   </span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; 1    20        1         2      0 &lt;chr [2]&gt; &lt;chr [2]&gt;</span></span></code></pre></div>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="22%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>score</code></td>
+<td>numeric</td>
+<td>Best local alignment score</td>
+</tr>
+<tr class="even">
+<td><code>identity</code></td>
+<td>numeric</td>
+<td>Fraction of aligned positions with exact matches</td>
+</tr>
+<tr class="odd">
+<td><code>align_len</code></td>
+<td>integer</td>
+<td>Length of the alignment (including gaps)</td>
+</tr>
+<tr class="even">
+<td><code>n_gaps</code></td>
+<td>integer</td>
+<td>Number of gap positions</td>
+</tr>
+<tr class="odd">
+<td><code>aligned1</code></td>
+<td>list of character</td>
+<td>Aligned tokens from text 1 (<code>&quot;---&quot;</code> for gaps)</td>
+</tr>
+<tr class="even">
+<td><code>aligned2</code></td>
+<td>list of character</td>
+<td>Aligned tokens from text 2</td>
+</tr>
+</tbody>
+</table>
+<p>Access the aligned sequences:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>result<span class="sc">$</span>aligned1[[<span class="dv">1</span>]]</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;sat&quot; &quot;on&quot;</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>result<span class="sc">$</span>aligned2[[<span class="dv">1</span>]]</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">#&gt; [1] &quot;sat&quot; &quot;on&quot;</span></span></code></pre></div>
+</div>
+<div id="gap-penalties" class="section level3">
+<h3>Gap penalties</h3>
+<p>The algorithm uses <strong>affine gap penalties</strong>: opening a
+gap costs <code>gap_open</code>, and each additional position costs
+<code>gap_extend</code>. This means a single long gap is cheaper than
+many short gaps.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Default: gap_open = -5, gap_extend = -2</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>result_default <span class="ot">&lt;-</span> <span class="fu">ssw_align</span>(<span class="st">&quot;the cat sat&quot;</span>, <span class="st">&quot;the big furry cat sat&quot;</span>, sim)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># Strict: discourage gaps</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>result_strict <span class="ot">&lt;-</span> <span class="fu">ssw_align</span>(<span class="st">&quot;the cat sat&quot;</span>, <span class="st">&quot;the big furry cat sat&quot;</span>, sim,</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>                           <span class="at">gap_open =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">gap_extend =</span> <span class="sc">-</span><span class="dv">5</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co"># Lenient: allow gaps freely</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>result_lenient <span class="ot">&lt;-</span> <span class="fu">ssw_align</span>(<span class="st">&quot;the cat sat&quot;</span>, <span class="st">&quot;the big furry cat sat&quot;</span>, sim,</span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>                            <span class="at">gap_open =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">gap_extend =</span> <span class="sc">-</span><span class="fl">0.5</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a>  <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">&quot;default&quot;</span>, <span class="st">&quot;strict&quot;</span>, <span class="st">&quot;lenient&quot;</span>),</span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(result_default<span class="sc">$</span>score, result_strict<span class="sc">$</span>score, result_lenient<span class="sc">$</span>score),</span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a>  <span class="at">gaps =</span> <span class="fu">c</span>(result_default<span class="sc">$</span>n_gaps, result_strict<span class="sc">$</span>n_gaps, result_lenient<span class="sc">$</span>n_gaps)</span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a>)</span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 3</span></span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a><span class="co">#&gt;   mode    score  gaps</span></span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;int&gt;</span></span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a><span class="co">#&gt; 1 default  23       2</span></span>
+<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a><span class="co">#&gt; 2 strict   20       0</span></span>
+<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a><span class="co">#&gt; 3 lenient  27.5     2</span></span></code></pre></div>
+<p>Both values should be <strong>negative</strong>. Larger magnitude =
+harsher penalty.</p>
+</div>
+<div id="input-formats" class="section level3">
+<h3>Input formats</h3>
+<p><code>ssw_align()</code> accepts either a single string (split by
+whitespace) or a character vector of pre-tokenized words:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># These are equivalent:</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">ssw_align</span>(<span class="st">&quot;the cat sat&quot;</span>, <span class="st">&quot;the dog sat&quot;</span>, sim)</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 6</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt;   score identity align_len n_gaps aligned1  aligned2 </span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;int&gt;  &lt;int&gt; &lt;list&gt;    &lt;list&gt;   </span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt; 1    15    0.667         3      0 &lt;chr [3]&gt; &lt;chr [3]&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="fu">ssw_align</span>(<span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;sat&quot;</span>), <span class="fu">c</span>(<span class="st">&quot;the&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;sat&quot;</span>), sim)</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 6</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt;   score identity align_len n_gaps aligned1  aligned2 </span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;int&gt;  &lt;int&gt; &lt;list&gt;    &lt;list&gt;   </span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt; 1    15    0.667         3      0 &lt;chr [3]&gt; &lt;chr [3]&gt;</span></span></code></pre></div>
+<p>For custom tokenization (e.g., with <code>tidytext</code> or
+<code>tokenizers</code>):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>tokens1 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">text =</span> <span class="st">&quot;The cat&#39;s hat.&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>  <span class="fu">pull</span>(word)</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>tokens2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">text =</span> <span class="st">&quot;A dog&#39;s collar.&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">|&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>  <span class="fu">pull</span>(word)</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="fu">ssw_align</span>(tokens1, tokens2, sim)</span></code></pre></div>
+</div>
+<div id="local-alignment" class="section level3">
+<h3>Local alignment</h3>
+<p>This is a <strong>local</strong> alignment algorithm — it finds the
+best-matching subsequences, ignoring unrelated text at the
+boundaries:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">ssw_align</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="st">&quot;blah blah the cat sat blah blah&quot;</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="st">&quot;noise noise the cat sat noise noise&quot;</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  sim</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>)</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>result<span class="sc">$</span>aligned1[[<span class="dv">1</span>]]  <span class="co"># Just &quot;the&quot;, &quot;cat&quot;, &quot;sat&quot;</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co">#&gt; [1] &quot;the&quot; &quot;cat&quot; &quot;sat&quot;</span></span></code></pre></div>
+</div>
+</div>
+<div id="batch-comparison" class="section level2">
+<h2>Batch Comparison</h2>
+<p><code>ssw_batch_align()</code> takes a data frame with text columns
+and adds alignment results. It’s pipe-friendly and uses tidy evaluation
+for column selection:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="at">speaker =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="at">text_a =</span> <span class="fu">c</span>(<span class="st">&quot;the cat sat on the mat&quot;</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>             <span class="st">&quot;she sells sea shells&quot;</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>             <span class="st">&quot;how much wood would&quot;</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>  <span class="at">text_b =</span> <span class="fu">c</span>(<span class="st">&quot;the dog sat on the rug&quot;</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>             <span class="st">&quot;she sells shore shells&quot;</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>             <span class="st">&quot;how much could would&quot;</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>)</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>  <span class="fu">ssw_batch_align</span>(text_a, text_b, sim) <span class="sc">|&gt;</span></span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a>  <span class="fu">select</span>(speaker, ssw_score, ssw_identity, ssw_n_gaps)</span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 4</span></span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="co">#&gt;   speaker ssw_score ssw_identity ssw_n_gaps</span></span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt;        &lt;dbl&gt;      &lt;int&gt;</span></span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a><span class="co">#&gt; 1 Alice          35         0.8           0</span></span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a><span class="co">#&gt; 2 Bob            25         0.75          0</span></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a><span class="co">#&gt; 3 Carol          25         0.75          0</span></span></code></pre></div>
+<div id="filtering-and-analyzing-results" class="section level3">
+<h3>Filtering and analyzing results</h3>
+<p>Since output is a tibble, standard dplyr works naturally:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  <span class="fu">ssw_batch_align</span>(text_a, text_b, sim) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>  <span class="fu">filter</span>(ssw_identity <span class="sc">&gt;</span> <span class="fl">0.5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(ssw_score))</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 9</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="co">#&gt;   speaker text_a          text_b ssw_score ssw_identity ssw_align_len ssw_n_gaps</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;           &lt;chr&gt;      &lt;dbl&gt;        &lt;dbl&gt;         &lt;int&gt;      &lt;int&gt;</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="co">#&gt; 1 Alice   the cat sat on… the d…        35         0.8              5          0</span></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="co">#&gt; 2 Bob     she sells sea … she s…        25         0.75             4          0</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a><span class="co">#&gt; 3 Carol   how much wood … how m…        25         0.75             4          0</span></span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="co">#&gt; # ℹ 2 more variables: ssw_aligned1 &lt;list&gt;, ssw_aligned2 &lt;list&gt;</span></span></code></pre></div>
+</div>
+<div id="all-pairs-comparison" class="section level3">
+<h3>All-pairs comparison</h3>
+<p>To compare every text against every other text, first expand into
+pairs:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>texts <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="st">&quot;the cat sat on the mat&quot;</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  <span class="st">&quot;the dog sat on the rug&quot;</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>  <span class="st">&quot;a fish swam in the sea&quot;</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>)</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>pairs <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">expand_grid</span>(<span class="at">i =</span> <span class="fu">seq_along</span>(texts), <span class="at">j =</span> <span class="fu">seq_along</span>(texts)) <span class="sc">|&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>  <span class="fu">filter</span>(i <span class="sc">&lt;</span> j) <span class="sc">|&gt;</span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">text_a =</span> texts[i], <span class="at">text_b =</span> texts[j])</span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>pairs <span class="sc">|&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>  <span class="fu">ssw_batch_align</span>(text_a, text_b, sim) <span class="sc">|&gt;</span></span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>  <span class="fu">select</span>(i, j, ssw_score, ssw_identity)</span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 4</span></span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a><span class="co">#&gt;       i     j ssw_score ssw_identity</span></span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a><span class="co">#&gt;   &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;        &lt;dbl&gt;</span></span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a><span class="co">#&gt; 1     1     2        35          0.8</span></span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a><span class="co">#&gt; 2     1     3        10          1  </span></span>
+<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a><span class="co">#&gt; 3     2     3        10          1</span></span></code></pre></div>
+</div>
+</div>
+<div id="visualization" class="section level2">
+<h2>Visualization</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">ssw_align</span>(<span class="st">&quot;the cat sat on the mat&quot;</span>, <span class="st">&quot;the dog sat on the rug&quot;</span>, sim)</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="fu">ssw_print</span>(result)</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="co">#&gt; Score: 35.00  Identity: 80.0%  Length: 5  Gaps: 0</span></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="co">#&gt; the cat sat on  the </span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="co">#&gt; |   ~   |   |   |   </span></span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a><span class="co">#&gt; the dog sat on  the</span></span></code></pre></div>
+<p><code>ssw_print()</code> shows a three-line view:</p>
+<ul>
+<li>Line 1: aligned tokens from text 1</li>
+<li>Line 2: <code>|</code> for exact match, <code>~</code> for semantic
+match, space for gap</li>
+<li>Line 3: aligned tokens from text 2</li>
+</ul>
+<p>A header line shows the score, identity percentage, alignment length,
+and gap count.</p>
+</div>
+<div id="performance-notes" class="section level2">
+<h2>Performance Notes</h2>
+<ul>
+<li>The DP core is implemented in C (via Rcpp) for performance.</li>
+<li>The main bottleneck is building the similarity matrix (calling your
+function n × m times). <code>sim_from_embeddings()</code> computes
+cosine similarity efficiently with pre-computed norms.</li>
+<li><code>ssw_batch_align()</code> runs sequentially over rows. For very
+large batches, consider using <code>furrr::future_map()</code> or
+<code>parallel::mclapply()</code> to parallelize.</li>
+</ul>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

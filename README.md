@@ -17,18 +17,17 @@ Adapts the [Smith-Waterman algorithm](https://en.wikipedia.org/wiki/Smith%E2%80%
 ### Python
 
 ```bash
-cd python
-pip install .
+pip install git+https://github.com/alexanderfurnas/semanticsmith.git#subdirectory=python
 
 # With optional gensim support:
-pip install ".[gensim]"
+pip install "semanticsmith[gensim] @ git+https://github.com/alexanderfurnas/semanticsmith.git#subdirectory=python"
 ```
 
 ### R
 
 ```r
-# From the repository root (requires C compiler):
-devtools::install("r/")
+# Requires C compiler (Xcode CLI tools on macOS, Rtools on Windows)
+remotes::install_github("alexanderfurnas/semanticsmith", subdir = "r")
 ```
 
 ## Quick Start
